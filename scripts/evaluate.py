@@ -19,8 +19,8 @@ def extract_answer(output, mode='gen'):
             extracted_text = matches[-1].strip()  # Take the last match
     elif mode == 'infogen':
         # Extract content after **Final Information** or **Modified Reasoning Steps**
-        pattern_info = "\n**Final Information**"
-        pattern_step = "\n**Modified Reasoning Steps**"
+        pattern_info = "**Final Information**"
+        pattern_step = "**Modified Reasoning Steps**"
         if pattern_info in output:
             extracted_text = output.split(pattern_info)[-1].replace("\n","").strip("```").strip()
         elif pattern_step in output:
